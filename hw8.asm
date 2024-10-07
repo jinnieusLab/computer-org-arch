@@ -12,14 +12,13 @@ start:
 
 loop:
 	slli t0, x20, 2		# multiply i by 4
-	add t1, t0, x22		# add to data base
+	add t1, x22, t0		# add to data base
 	lw t2, 0(t1)		# load data[i]
 	add x21, x21, t2	# sum = sum + data[i]
 	
 	addi x20, x20, 1	# i++
 	
-	blt x20, t3, loop	# i<5
-	beq x20, t3, exit	
+	blt x20, t3, loop	# i<5	
 	
 exit:
 	nop
