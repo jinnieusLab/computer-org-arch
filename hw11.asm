@@ -1,10 +1,10 @@
 # Jimin Kim 700773907
-start:
+test:
 	li a0, 20
 	li a1, 30
 	li a2, 40
 	jal diff_mean
-	j end
+	j exit
 	
 diff_mean:
 	addi sp, sp, -4		# make space for 2 registers
@@ -28,5 +28,5 @@ mean:
 	srli a0, t0, 1		# m = (x+y)/2
 	ret	
 
-end:
+exit:
 	nop
